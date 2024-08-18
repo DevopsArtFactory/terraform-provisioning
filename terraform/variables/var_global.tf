@@ -22,10 +22,25 @@ variable "account_id" {
 # You can add any resource here, if you want to refer from others
 variable "remote_state" {
   default = {
+    vpc = {
+      tmcd_apnortheast2 = {
+        bucket = "zerone-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/vpc/tmcd_apnortheast2/terraform.tfstate"
+        region = "ap-northeast-2"
+      }
+    }
     iam = {
       zerone-id = {
         bucket = "zerone-id-apnortheast2-tfstate"
         key    = "provisioning/terraform/iam/zerone-id/terraform.tfstate"
+        region = "ap-northeast-2"
+      }
+    }
+
+    kms = {
+      zerone-id = {
+        bucket = "zerone-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/kms/zerone-id/ap-northeast-2/terraform.tfstate"
         region = "ap-northeast-2"
       }
     }
