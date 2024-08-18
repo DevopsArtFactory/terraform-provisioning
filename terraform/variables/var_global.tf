@@ -13,7 +13,7 @@ variable "atlantis_user" {
 # Add all account ID to here 
 variable "account_id" {
   default = {
-    id   = "066346343248"
+    id     = "066346343248"
     art-id = "816736805842"
   }
 }
@@ -22,5 +22,12 @@ variable "account_id" {
 # You can add any resource here, if you want to refer from others
 variable "remote_state" {
   default = {
+    iam = {
+      zerone-id = {
+        bucket = "zerone-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/iam/zerone-id/terraform.tfstate"
+        region = "ap-northeast-2"
+      }
+    }
   }
 }

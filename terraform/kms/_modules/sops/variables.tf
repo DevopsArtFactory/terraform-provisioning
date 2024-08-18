@@ -1,23 +1,38 @@
-variable "alias" {
+variable "region" {
+  default = "ap-northeast-2"
+}
+variable "common_alias" {
   description = "alias"
   type        = string
 }
 
+variable "secure_alias" {
+  description = "alias"
+  type        = string
+}
 
-variable "allowed_account_ids" {
-  description = "AWS account IDs able to use this KMS key."
-  type        = list(string)
-  validation {
-    condition     = alltrue([for id in var.allowed_account_ids : can(regex("^[0-9]{12}$", id))])
-    error_message = "The values must be AWS account ID."
+variable "common_aliow_arns" {
+  type = object({
+    use    = list(string)
+    manage = list(string)
+    delete = list(string)
+  })
+  default = {
+    use    = []
+    manage = []
+    delete = []
   }
 }
 
-variable "allowed_role_arns" {
-  description = "AWS AssumeRole role ARNs able to use this KMS key."
-  type        = list(string)
-  validation {
-    condition     = alltrue([for id in var.allowed_role_arns : can(regex("^arn:aws:iam::[0-9]{12}", id))])
-    error_message = "The values must be AWS IAM ARN"
+variable "secure_aliow_arns" {
+  type = object({
+    use    = list(string)
+    manage = list(string)
+    delete = list(string)
+  })
+  default = {
+    use    = []
+    manage = []
+    delete = []
   }
 }
