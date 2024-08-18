@@ -1,5 +1,5 @@
 # terraform-provisioning
-## Terraform Sytle Guide(https://github.com/jonbrouse/terraform-style-guide/blob/master/README.md)
+Terraform Sytle Guide(https://github.com/jonbrouse/terraform-style-guide/blob/master/README.md)
 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
