@@ -193,8 +193,8 @@ data "aws_iam_policy_document" "jenkins_operation_document" {
       "elasticloadbalancing:DescribeTags",
       "elasticloadbalancing:DescribeInstanceHealth",
       "elasticloadbalancing:DescribeTargetGroups",
-      "autoscaling:*",
-      "codebuild:*"
+      "codebuild:*",
+      "elasticloadbalancing:RegisterTargets"
     ]
   }
 

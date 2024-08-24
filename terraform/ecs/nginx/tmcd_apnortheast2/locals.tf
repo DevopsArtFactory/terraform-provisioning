@@ -1,6 +1,6 @@
 locals {
-  name   = "ex-tmcdapne2"
-  
+  name = "ex-tmcdapne2"
+
   container_name = "ecs-sample"
   container_port = 80
 

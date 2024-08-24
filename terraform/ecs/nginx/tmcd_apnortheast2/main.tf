@@ -14,7 +14,7 @@ module "ecs_service" {
     my-vol = {}
   }
   deployment_controller = {
-    type="CODE_DEPLOY"
+    type = "CODE_DEPLOY"
   }
   # Container definition(s)
   container_definitions = {

@@ -71,27 +71,27 @@ module "alb" {
     }
 
     green = {
-        backend_protocol                  = "HTTP"
-        backend_port                      = local.container_port
-        target_type                       = "ip"
-        deregistration_delay              = 5
-        load_balancing_cross_zone_enabled = true
+      backend_protocol                  = "HTTP"
+      backend_port                      = local.container_port
+      target_type                       = "ip"
+      deregistration_delay              = 5
+      load_balancing_cross_zone_enabled = true
 
-        health_check = {
-          enabled             = true
-          healthy_threshold   = 5
-          interval            = 30
-          matcher             = "200"
-          path                = "/"
-          port                = "traffic-port"
-          protocol            = "HTTP"
-          timeout             = 5
-          unhealthy_threshold = 2
-        }
-        create_attachment = false
+      health_check = {
+        enabled             = true
+        healthy_threshold   = 5
+        interval            = 30
+        matcher             = "200"
+        path                = "/"
+        port                = "traffic-port"
+        protocol            = "HTTP"
+        timeout             = 5
+        unhealthy_threshold = 2
       }
-      # There's nothing to attach here in this definition. Instead,
-      # ECS will attach the IPs of the tasks to this target group
+      create_attachment = false
+    }
+    # There's nothing to attach here in this definition. Instead,
+    # ECS will attach the IPs of the tasks to this target group
   }
 
   tags = local.tags

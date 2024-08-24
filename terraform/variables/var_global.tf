@@ -44,5 +44,15 @@ variable "remote_state" {
         region = "ap-northeast-2"
       }
     }
+
+    ecs = {
+      nginx = {
+        tmcdapne2 = {
+          bucket = "zerone-id-apnortheast2-tfstate"
+          key    = "provisioning/terraform/ecs/nginx/tmcd_apnortheast2/terraform.tfstate"
+          region = "ap-northeast-2"
+        }
+      }
+    }
   }
 }
