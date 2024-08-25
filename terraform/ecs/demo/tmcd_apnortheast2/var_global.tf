@@ -55,13 +55,6 @@ variable "remote_state" {
           region = "ap-northeast-2"
         }
       }
-      demo = {
-        tmcdapne2 = {
-          bucket = "zerone-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/ecs/demo/tmcd_apnortheast2/terraform.tfstate"
-          region = "ap-northeast-2"
-        }
-      }
     }
 
     security_group = {
@@ -69,16 +62,6 @@ variable "remote_state" {
         tmcdapne2 = {
           bucket = "zerone-id-apnortheast2-tfstate"
           key    = "provisioning/terraform/securitygroup/zerone-id/tmcd_apnortheast2/terraform.tfstate"
-          region = "ap-northeast-2"
-        }
-      }
-    }
-
-    codedeploy = {
-      zerone-id = {
-        apne2 = {
-          bucket = "zerone-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/codedeploy/ap-northeast-2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }

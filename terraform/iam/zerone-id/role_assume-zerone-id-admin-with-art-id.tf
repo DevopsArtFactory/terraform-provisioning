@@ -14,8 +14,10 @@ data "aws_iam_policy_document" "assume_zerone_id_admin_assume_role" {
     effect  = "Allow"
 
     principals {
-      type        = "AWS"
-      identifiers = ["arn:aws:iam::${var.account_id.art-id}:root"]
+      type = "AWS"
+      identifiers = [
+        "arn:aws:iam::${var.account_id.id}:root",
+      "arn:aws:iam::${var.account_id.art-id}:root"]
     }
   }
 }
@@ -28,12 +30,12 @@ resource "aws_iam_role_policy" "assume_zerone_id_admin_passrole" {
 }
 
 data "aws_iam_policy_document" "assume_zerone_id_admin_pass_role" {
-    statement {
-        actions = ["iam:PassRole"]
-        effect  = "Allow"
+  statement {
+    actions = ["iam:PassRole"]
+    effect  = "Allow"
 
-        resources = ["*"]
-    }
+    resources = ["*"]
+  }
 }
 
 resource "aws_iam_role_policy_attachment" "assume_zerone_id_admin" {
