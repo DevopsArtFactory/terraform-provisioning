@@ -56,5 +56,15 @@ variable "remote_state" {
         }
       }
     }
+
+    security_group = {
+      zerone-id = {
+        tmcdapne2 = {
+          bucket = "zerone-id-apnortheast2-tfstate"
+          key    = "provisioning/terraform/securitygroup/zerone-id/tmcd_apnortheast2/terraform.tfstate"
+          region = "ap-northeast-2"
+        }
+      }
+    }
   }
 }
