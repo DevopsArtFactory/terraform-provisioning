@@ -5,6 +5,7 @@ cidr_numeral       = "10"
 availability_zones = ["ap-northeast-2a", "ap-northeast-2c"]
 billing_tag        = "tmc"
 env_suffix         = "d"
+shard_id           = "tmcdapne2"
 
 peering_requests = [
 ]

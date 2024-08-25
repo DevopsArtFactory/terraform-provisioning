@@ -258,38 +258,36 @@ data "aws_iam_policy_document" "codebuild_deployment_ecr_document" {
   }
 }
 
-# resource "aws_iam_role_policy" "codebuild_deployment_kms" {
-#   name   = "codebuild-deployment-kms-decryption"
-#   role   = aws_iam_role.codebuild_deployment.id
-#   policy = data.aws_iam_policy_document.codebuild_deployment_kms_ssm_document.json
-# }
+resource "aws_iam_role_policy" "codebuild_deployment_kms" {
+  name   = "codebuild-deployment-kms-decryption"
+  role   = aws_iam_role.codebuild_deployment.id
+  policy = data.aws_iam_policy_document.codebuild_deployment_kms_ssm_document.json
+}
 
-# data "aws_iam_policy_document" "codebuild_deployment_kms_ssm_document" {
-#   statement {
-#     sid    = "AllowToDecryptKMSKey"
-#     effect = "Allow"
-#     resources = [
-#       data.terraform_remote_state.kms_apne2.outputs.aws_kms_key_ops_apne2_deployment_common_arn
-#     ]
-#     actions = [
-#       "kms:Decrypt"
-#     ]
-#   }
+data "aws_iam_policy_document" "codebuild_deployment_kms_ssm_document" {
+  statement {
+    sid    = "AllowToDecryptKMSKey"
+    effect = "Allow"
+    resources = [
+      data.terraform_remote_state.kms.outputs.aws_kms_key_apne2_deployment_common_arn
+    ]
+    actions = [
+      "kms:Decrypt"
+    ]
+  }
 
-#   statement {
-#     sid    = "AllowSsmParameterAccess"
-#     effect = "Allow"
-#     resources = [
-#       "arn:aws:ssm:ap-northeast-2:${var.account_id.id}:parameter/CodeBuild/*",
-#       "arn:aws:ssm:ap-northeast-2:${var.account_id.id}:parameter/github_token",
-#       "arn:aws:ssm:ap-northeast-2:${var.account_id.id}:parameter/DATADOG_API_KEY"
-#     ]
-#     actions = [
-#       "ssm:GetParameter",
-#       "ssm:GetParameters"
-#     ]
-#   }
-# }
+  statement {
+    sid    = "AllowSsmParameterAccess"
+    effect = "Allow"
+    resources = [
+      "arn:aws:ssm:ap-northeast-2:${var.account_id.id}:parameter/CodeBuild/*",
+    ]
+    actions = [
+      "ssm:GetParameter",
+      "ssm:GetParameters"
+    ]
+  }
+}
 
 resource "aws_iam_role_policy" "codebuild_deployment_cloudwatch" {
   name   = "codebuild-deployment-cloudwatch"
