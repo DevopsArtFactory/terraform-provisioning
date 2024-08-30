@@ -6,7 +6,6 @@ resource "docker_image" "nginx" {
 
 # Docker 컨테이너 생성
 resource "docker_container" "nginx" {
-  count = 1
   image = docker_image.nginx.image_id
   name  = "nginx_container_${var.environment}"
 
