@@ -4,3 +4,7 @@ variable "deploy_container" {
   type        = bool
   default     = true
 }
+
+variable "container_external_port" {
+  default = 8080
+}

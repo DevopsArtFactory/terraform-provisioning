@@ -11,9 +11,14 @@ resource "docker_container" "nginx" {
   name  = "nginx_container"
   ports {
     internal = 80
-    external = 8080
+    external = var.container_external_port
   }
   lifecycle {
+    # Prevent use Known port
+    precondition {
+      condition = var.container_external_port != 80 
+      error_message = "Don't use Known port(http)"
+    }
     # Nginx container cannot created!
     postcondition {
       condition = can(self.id)
