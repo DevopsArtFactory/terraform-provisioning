@@ -27,6 +27,6 @@ resource "docker_container" "nginx" {
   }
 }
 
-# output "docker_container_id" {
-#   value = docker_container.nginx[0].id
-# }
+output "docker_container_id" {
+  value = docker_container.nginx[0].id
+}

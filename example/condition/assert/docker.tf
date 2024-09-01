@@ -21,7 +21,7 @@ check "health_check" {
   }
 
   assert {
-    condition = data.http.nginx.status_code == 200
+    condition = data.http.nginx.status_code != 200
     error_message = "${data.http.nginx.url} returned an unhealthy status code"
   }
 }
