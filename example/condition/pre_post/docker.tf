@@ -29,4 +29,8 @@ resource "docker_container" "nginx" {
 
 output "docker_container_id" {
   value = docker_container.nginx[0].id
+  precondition {
+    condition = docker_container.nginx[0].id != ""
+    error_message = "Don't Destroy"
+  }
 }
