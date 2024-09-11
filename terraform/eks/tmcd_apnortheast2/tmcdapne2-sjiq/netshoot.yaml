@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netshoot-pod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: netshoot-pod
+  template:
+    metadata:
+      labels:
+        app: netshoot-pod
+    spec:
+      containers:
+      - name: netshoot-pod
+        image: nicolaka/netshoot
+        command: ["tail"]
+        args: ["-f", "/dev/null"]
