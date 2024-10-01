@@ -12,7 +12,17 @@ projects:
       enabled: true
     apply_requirements: []
     workflow: id
-
+  - name: ivpc/relengd_apnortheast2
+    dir: terraform/vpc/relengd_apnortheast2
+    workspace: default
+    terraform_version: 1.3.7
+    autoplan:
+      when_modified: [
+         "*.tf"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id
 
 #### Workflows #####
 workflows:
