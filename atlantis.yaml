@@ -38,6 +38,18 @@ projects:
       enabled: true
     apply_requirements: []
     workflow: id
+
+  - name: iam/zerone-id
+    dir: terraform/iam/zerone-id
+    workspace: default
+    terraform_version: 1.5.7
+    autoplan:
+      when_modified: [
+         "*.tf"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id    
 #### Workflows #####
 workflows:
   # id
