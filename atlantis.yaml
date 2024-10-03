@@ -63,6 +63,19 @@ projects:
     apply_requirements: []
     workflow: id  
 
+  - name: ssm/zerone-id/ap-northeast-2
+    dir: terraform/ssm/zerone-id/ap-northeast-2
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "secrets.sops.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id  
+
 #### Workflows #####
 workflows:
   # id
