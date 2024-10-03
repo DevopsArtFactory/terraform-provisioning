@@ -14,7 +14,7 @@ projects:
     workflow: id
 
   - name: vpc/tmcd_apnortheast2
-    dir: terraform/vpc/tmcd_apnortheast2
+    dir: tterraform/vpc/tmcd_apnortheast2
     workspace: default
     terraform_version: 1.5.7
     autoplan:
