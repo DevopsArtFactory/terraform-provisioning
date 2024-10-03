@@ -8,6 +8,11 @@ env_suffix         = "d"
 shard_id           = "testdapne2"
 
 peering_requests = [
+    {
+        id = "pcx-025125d9f044c1d1e"
+        vpc_name = "tmcd_apnortheast2"
+        cidr_block = "10.10.0.0/16"
+    }
 ]
 
 db_peering_requests = [
