@@ -25,6 +25,17 @@ projects:
     apply_requirements: []
     workflow: id
 
+  - name: vpc/testd_apnortheast2
+    dir: terraform/vpc/testd_apnortheast2
+    workspace: default
+    terraform_version: 1.5.7
+    autoplan:
+      when_modified: [
+         "*.tf"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id
 #### Workflows #####
 workflows:
   # id
