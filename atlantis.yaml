@@ -12,7 +12,7 @@ projects:
       enabled: true
     apply_requirements: []
     workflow: id
-##vpc
+
   - name: vpc/tmcd_apnortheast2
     dir: terraform/vpc/tmcd_apnortheast2
     workspace: default
