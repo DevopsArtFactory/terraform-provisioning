@@ -17,7 +17,6 @@
 #       type = "AWS"
 #       identifiers = [
 #         "arn:aws:iam::${var.account_id.id}:root",
-#         "arn:aws:iam::${var.account_id.art-id}:root"
 #       ]
 #     }
 #   }
