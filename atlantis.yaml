@@ -74,8 +74,7 @@ projects:
       ]
       enabled: true
     apply_requirements: []
-    workflow: id  
-    
+    workflow: id   
 ### github
   - name: github/springboot-sample
     dir: github/springboot-sample
