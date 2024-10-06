@@ -1,5 +1,5 @@
-resource "aws_ecr_repository" "sample" {
-  name = "sample"
+resource "aws_ecr_repository" "demoapp" {
+  name = "demoapp"
 
   image_scanning_configuration {
     scan_on_push = true
@@ -8,8 +8,8 @@ resource "aws_ecr_repository" "sample" {
   image_tag_mutability = "IMMUTABLE"
 }
 
-resource "aws_ecr_repository_policy" "sample" {
-  repository = aws_ecr_repository.sample.name
+resource "aws_ecr_repository_policy" "demoapp" {
+  repository = aws_ecr_repository.demoapp.name
 
   policy = jsonencode({
     "Version" : "2008-10-17",
