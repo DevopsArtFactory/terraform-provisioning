@@ -1,0 +1,18 @@
+assume_iam_role: ENC[AES256_GCM,data:WruCng==,iv:xJsuFV4tNOr2YCd0AVltsqWV/7z07lJg2SOFU3aiPr4=,tag:CBTLNrESIO6KpKvwHkYkEg==,type:str]
+aws_account_num: ENC[AES256_GCM,data:7emZF5B4FqSb+fQ=,iv:FANwzvuSo/jbnUDSkPwlnFYaVxZt6P2+7zc2M1hKBrI=,tag:r1iKzzXWJH1H0DMoJKDySQ==,type:float]
+sops:
+    kms:
+        - arn: arn:aws:kms:ap-northeast-2:066346343248:key/2cdc8be6-6eae-413c-8aa6-d54ec41d1e0c
+          role: arn:aws:iam::066346343248:role/zerond-id-secure-sops
+          created_at: "2024-10-06T01:23:19Z"
+          enc: AQICAHil5CVAU7wRl40uGx5jzJXGGCjkDTkNISonqGYggnXzJgG+AQ3SqbP5ObVu61oFseDyAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMY6du8jRli05YCo31AgEQgDucWV5PodduiBQq9kkp36tDNm1gLdg9aoci35h07qYhRp19ZD6mCEKuCi3UE7rJDDrIrNvF7iY3RbMTgA==
+          aws_profile: ""
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2024-10-06T01:23:19Z"
+    mac: ENC[AES256_GCM,data:r5lRKDRpZ7JISmldtE1f/mhxM1a7TGzfrfvdo70X13aZ4auR3yq6cMFphkrBjPqB4sXbXKHThDkMiDGBVx6JqVLatrr+FxvbFN+9g3ca4qkTPp5O6ihBKMzlJZboBWhzfgAwFKG4FUH7bbaNyeOawMJC+a9+XIiAjnjJ8zWh97c=,iv:YlF9FQJtMxoMqofbLamHdKu0XcOWRLO15LWzmkq+3+M=,tag:RTJuUTFUHEsji47HRYuusA==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.3
