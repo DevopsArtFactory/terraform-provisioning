@@ -1,3 +1,3 @@
 data "sops_file" "springboot_sample" {
-  source_file = "springboot_sample.yaml"
+  source_file = "secrets.sops.yaml"
 }
