@@ -1,3 +1,3 @@
-data "sops_file" "springboot_sample_jpa" {
+data "sops_file" "springboot_sample" {
   source_file = "springboot_sample.yaml"
 }
