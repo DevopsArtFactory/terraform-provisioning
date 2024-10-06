@@ -90,6 +90,20 @@ projects:
     apply_requirements: []
     workflow: github  
 
+  - name: github/terraform-provisioning
+    dir: github/terraform-provisioning
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "*.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: github  
+
+
 #### Workflows #####
 workflows:
   # id
