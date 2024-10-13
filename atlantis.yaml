@@ -86,7 +86,20 @@ projects:
       ]
       enabled: true
     apply_requirements: []
-    workflow: id     
+    workflow: id   
+
+  - name: securitygroup/zerone-id/tmcd_apnortheast2
+    dir: terraform/securitygroup/zerone-id/tmcd_apnortheast2
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "terraform.tfvars"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id       
 ### github
   - name: github/springboot-sample
     dir: github/springboot-sample
