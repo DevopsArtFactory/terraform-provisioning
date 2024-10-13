@@ -42,7 +42,7 @@ projects:
   - name: iam/zerone-id
     dir: terraform/iam/zerone-id
     workspace: default
-    terraform_version: 1.5.7
+    terraform_version: 1.7.0
     autoplan:
       when_modified: [
          "*.tf"
