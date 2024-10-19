@@ -31,4 +31,5 @@ locals {
       env_value = "admin"
     },
   ]
+  test_envirement_variables = []
 }
