@@ -3,7 +3,7 @@ locals {
 
   container_name = "demo"
   container_port = 8080
-  image          = "066346343248.dkr.ecr.ap-northeast-2.amazonaws.com/sample:9d06203d"
+  image          = "066346343248.dkr.ecr.ap-northeast-2.amazonaws.com/demoapp:9d06203d"
   tags = {
     Name = local.name
   }

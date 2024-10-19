@@ -1,5 +1,5 @@
 module "ecs_cluster" {
-  source = "../_modules/cluster"
+  source = "terraform-aws-modules/ecs/aws//modules/cluster"
 
   cluster_name = local.name
 

@@ -34,7 +34,8 @@
 #       "ecr:GetDownloadUrlForLayer",
 #       "ecr:GetAuthorizationToken",
 #       "ecr:BatchGetImage",
-#     "ecr:BatchCheckLayerAvailability"]
+#       "ecr:BatchCheckLayerAvailability"
+#     ]
 #     resources = ["*"]
 #   }
 

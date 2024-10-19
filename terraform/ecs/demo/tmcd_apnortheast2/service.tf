@@ -2,7 +2,7 @@
 # Service
 ################################################################################
 module "ecs_service" {
-  source = "../_modules/service"
+  source = "terraform-aws-modules/ecs/aws//modules/service"
 
   name        = local.name
   cluster_arn = module.ecs_cluster.arn
@@ -16,6 +16,8 @@ module "ecs_service" {
   deployment_controller = {
     type = "CODE_DEPLOY"
   }
+  create_tasks_iam_role = false
+  create_task_exec_iam_role = false
   task_exec_iam_role_arn = data.terraform_remote_state.iam.outputs.demo_tmcdapne2_task_exec_arn
   tasks_iam_role_arn = data.terraform_remote_state.iam.outputs.demo_tmcdapne2_task_arn
   # Container definition(s)

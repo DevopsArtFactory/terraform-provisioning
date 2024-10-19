@@ -33,6 +33,36 @@
 #   }
 # }
 
+# resource "aws_iam_role_policy" "demo_kms" {
+#   name   = "demo-kms-decryption"
+#   role   = aws_iam_role.demo_tmcdapne2_task.id
+#   policy = data.aws_iam_policy_document.demo_kms_ssm_document.json
+# }
+
+# data "aws_iam_policy_document" "demo_kms_ssm_document" {
+#   statement {
+#     sid    = "AllowToDecryptKMSKey"
+#     effect = "Allow"
+#     resources = [
+#       data.terraform_remote_state.kms.outputs.aws_kms_key_apne2_deployment_common_arn
+#     ]
+#     actions = [
+#       "kms:Decrypt"
+#     ]
+#   }
+
+#   statement {
+#     sid    = "AllowSecretsManagerAccess"
+#     effect = "Allow"
+#     resources = [
+#       "arn:aws:secretsmanager:ap-northeast-2:${var.account_id.id}:secret:/secret/demo-4n44r2"
+#     ]
+#     actions = [
+#       "secretsmanager:GetSecretValue"
+#     ]
+#   }
+# }
+
 # output "demo_tmcdapne2_task_arn" {
 #   value = aws_iam_role.demo_tmcdapne2_task.arn
 # }

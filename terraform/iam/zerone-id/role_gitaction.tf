@@ -84,17 +84,17 @@ data "aws_iam_policy_document" "gitaction_ecs" {
     resources = ["*"]
   }
 
-#   statement {
-#     sid    = "PassRolesInTaskDefinition"
-#     effect = "Allow"
-#     actions = [
-#       "iam:PassRole"
-#     ]
-#     resources = [
-#       aws_iam_role.demo_tmcdapne2_task.arn,
-#       aws_iam_role.demo_tmcdapne2_task_exec.arn
-#     ]
-#   }
+  #   statement {
+  #     sid    = "PassRolesInTaskDefinition"
+  #     effect = "Allow"
+  #     actions = [
+  #       "iam:PassRole"
+  #     ]
+  #     resources = [
+  #       aws_iam_role.demo_tmcdapne2_task.arn,
+  #       aws_iam_role.demo_tmcdapne2_task_exec.arn
+  #     ]
+  #   }
   # statement {
   #   sid    = "DeployService"
   #   effect = "Allow"

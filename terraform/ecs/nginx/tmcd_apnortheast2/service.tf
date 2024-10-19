@@ -2,7 +2,7 @@
 # Service
 ################################################################################
 module "ecs_service" {
-  source = "../_modules/service"
+  source = "terraform-aws-modules/ecs/aws//modules/service"
 
   name        = local.name
   cluster_arn = module.ecs_cluster.arn
