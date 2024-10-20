@@ -7,13 +7,13 @@ module "ecs_cluster" {
   fargate_capacity_providers = {
     FARGATE = {
       default_capacity_provider_strategy = {
-        weight = 50
-        base   = 20
+        weight = 1
+        base   = 1
       }
     }
     FARGATE_SPOT = {
       default_capacity_provider_strategy = {
-        weight = 50
+        weight = 1
       }
     }
   }  
