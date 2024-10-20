@@ -16,6 +16,7 @@ module "ecs_service" {
   deployment_controller = {
     type = "CODE_DEPLOY"
   }
+
   create_tasks_iam_role = false
   create_task_exec_iam_role = false
   task_exec_iam_role_arn = data.terraform_remote_state.iam.outputs.demo_tmcdapne2_task_exec_arn
@@ -66,7 +67,7 @@ module "ecs_service" {
 
   subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnets
   security_group_rules = {
-    alb_ingress_80 = {
+    alb_ingress_8080 = {
       type                     = "ingress"
       from_port                = local.container_port
       to_port                  = local.container_port

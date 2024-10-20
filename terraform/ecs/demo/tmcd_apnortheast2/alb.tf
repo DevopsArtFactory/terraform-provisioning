@@ -25,7 +25,7 @@ module "alb" {
   security_group_egress_rules = {
     all = {
       ip_protocol = "-1"
-      cidr_ipv4   = data.terraform_remote_state.vpc.outputs.cidr_block
+      cidr_ipv4   = "0.0.0.0/0"
     }
   }
   route53_records = {
