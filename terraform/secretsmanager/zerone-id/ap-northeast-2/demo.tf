@@ -14,7 +14,7 @@ module "demo_tmcdapne2" {
 resource "aws_secretsmanager_secret_version" "demo_tmcdapne2" {
   secret_id = module.demo_tmcdapne2.id
   secret_string = sensitive(jsonencode(
-      data.sops_file.demo_tmcdapne2_value.data
+    data.sops_file.demo_tmcdapne2_value.data
     )
   )
 }

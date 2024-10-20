@@ -139,7 +139,21 @@ projects:
       ]
       enabled: true
     apply_requirements: []
-    workflow: id   
+    workflow: id  
+
+  - name: secretsmanager/zerone-id/ap-northeast-2
+    dir: terraform/secretsmanager/zerone-id/ap-northeast-2
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "terraform.tfvars",
+         "*.sops.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id      
 ### github
   - name: github/springboot-sample
     dir: github/springboot-sample
