@@ -31,5 +31,5 @@ locals {
       env_value = "admin"
     },
   ]
-  test_envirement_variables = []
+  demo_envirement_variables = []
 }
