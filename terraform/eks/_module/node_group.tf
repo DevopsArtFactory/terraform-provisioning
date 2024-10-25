@@ -41,6 +41,35 @@ resource "aws_eks_node_group" "eks_node_group" {
   ]
 }
 
+resource "aws_launch_template" "eks_node_group" {
+  count = var.enabled_node_disk_gp3 ? 1 : 0
+
+  name = "${var.cluster_name}-node-launch-template"
+  block_device_mappings {
+    device_name = var.node_device_name
+
+    ebs {
+      volume_size           = var.ebs_volume_size
+      volume_type           = var.ebs_volume_type
+      encrypted             = true
+      kms_key_id            = data.aws_kms_alias.ebs.id
+      iops                  = var.ebs_volume_iops
+      throughput            = var.ebs_volume_throughput
+      delete_on_termination = var.ebs_delete_on_termination
+    }
+
+  }
+
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_tokens                 = "optional"
+    http_put_response_hop_limit = 2
+  }
+}
+
+data "aws_kms_alias" "ebs" {
+  name = "alias/aws/ebs"
+}
 # IAM
 resource "aws_iam_role" "eks_node_group" {
   name        = "eks-${var.cluster_name}-ng"

@@ -31,5 +31,5 @@ output "cluster_endpoint" {
 
 output "cluster_certificate_authority_data" {
   description = "EKS Cluster CA(certificate authority) data"
-  value = aws_eks_cluster.eks_cluster.certificate_authority[0].data
+  value       = aws_eks_cluster.eks_cluster.certificate_authority[0].data
 }

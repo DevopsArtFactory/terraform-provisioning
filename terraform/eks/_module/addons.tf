@@ -44,7 +44,7 @@ resource "aws_eks_addon" "vpc_cni" {
   addon_name    = "vpc-cni"
   addon_version = var.vpc_cni_version
 
-  service_account_role_arn = aws_iam_role.cni_irsa_role.arn
+  service_account_role_arn    = aws_iam_role.cni_irsa_role.arn
   resolve_conflicts_on_create = "OVERWRITE"
 
   configuration_values = var.vpc_cni_configuration_values

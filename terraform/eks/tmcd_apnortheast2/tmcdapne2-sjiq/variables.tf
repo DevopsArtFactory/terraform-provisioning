@@ -62,6 +62,11 @@ variable "ebs_csi_driver_version" {
   description = "version of ebs_csi_driver_version"
 }
 
+
+variable "pod_identity_agent_version" {
+  type        = string
+  description = "version of pod_identity_agent_version"
+}
 variable "fargate_enabled" {
   type        = bool
   description = "Whether or not to use AWS Fargate on Kubernetes"

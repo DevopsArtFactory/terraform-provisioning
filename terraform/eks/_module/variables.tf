@@ -220,3 +220,36 @@ variable "external_secrets_access_secretsmanager_arns" {
   description = "ARNs for external access to SecretsManager"
   default     = ["*"]
 }
+variable "enabled_node_disk_gp3" {
+  type = bool
+  default = true
+}
+variable "ebs_volume_type" {
+  type    = string
+  default = "gp3"
+}
+
+variable "ebs_volume_size" {
+  type    = number
+  default = 30
+}
+
+variable "ebs_volume_iops" {
+  type    = number
+  default = 3000
+}
+
+variable "ebs_volume_throughput" {
+  type    = number
+  default = 125
+}
+
+variable "ebs_delete_on_termination" {
+  type    = bool
+  default = true
+}
+
+variable "node_device_name" {
+  type    = string
+  default = "/dev/xvda"
+}
