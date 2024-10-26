@@ -8,15 +8,14 @@ module "demoapp" {
   # Port for service and healthcheck
   service_port     = 8080
   healthcheck_port = 8080
-
+  healthcheck_path = "/actuator/health"
+  
   # VPC Information via remote_state
   shard_id                 = data.terraform_remote_state.vpc.outputs.shard_id
   public_subnets           = data.terraform_remote_state.vpc.outputs.public_subnets
   private_subnets          = data.terraform_remote_state.vpc.outputs.private_subnets
   aws_region               = data.terraform_remote_state.vpc.outputs.aws_region
   vpc_cidr_numeral         = data.terraform_remote_state.vpc.outputs.cidr_numeral
-  route53_internal_domain  = data.terraform_remote_state.vpc.outputs.route53_internal_domain
-  route53_internal_zone_id = data.terraform_remote_state.vpc.outputs.route53_internal_zone_id
   target_vpc               = data.terraform_remote_state.vpc.outputs.vpc_id
   vpc_name                 = data.terraform_remote_state.vpc.outputs.vpc_name
 

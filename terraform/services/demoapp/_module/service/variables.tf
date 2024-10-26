@@ -64,3 +64,8 @@ variable "service_port" {
 variable "healthcheck_port" {
   description = "Healthcheck Port"
 }
+
+
+variable "healthcheck_path" {
+  description = "Healthcheck Path"
+}
