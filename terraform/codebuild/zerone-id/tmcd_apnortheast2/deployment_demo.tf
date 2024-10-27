@@ -8,9 +8,9 @@ module "deployment_demo" {
   billing_tag            = data.terraform_remote_state.vpc.outputs.billing_tag
   deployment_default_sg  = data.terraform_remote_state.security_group.outputs.codebuild_deployment_id
   service_role           = "arn:aws:iam::${var.account_id.id}:role/service-role/codebuild-deployment"
-  github_repo            = "https://github.com/DevopsArtFactory/springboot-sample.git"
+  github_repo            = "https://github.com/DevopsArtFactory/demoapp-deploy.git"
   build_image            = "aws/codebuild/amazonlinux2-x86_64-standard:5.0"
-  buildspec              = "buildspec-codedeploy.yml"
+  buildspec              = "buildspec.yml"
   image_credentials_type = "CODEBUILD"
   os_type                = "LINUX_CONTAINER"
   environment_variables  = local.demo_envirement_variables
