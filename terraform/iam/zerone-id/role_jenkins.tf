@@ -341,10 +341,13 @@ resource "aws_iam_instance_profile" "jenkins" {
   role = aws_iam_role.jenkins.name
 }
 
+resource "aws_iam_role_policy_attachment" "jenkins_attach" {
+  role = aws_iam_role.jenkins.name
+  policy_arn = aws_iam_policy.app_universal.arn
+}
 output "jenkins_instance_profile" {
   value = aws_iam_instance_profile.jenkins.arn
 }
-
 output "jenkins_arn" {
   value = aws_iam_role.jenkins.arn
 }
