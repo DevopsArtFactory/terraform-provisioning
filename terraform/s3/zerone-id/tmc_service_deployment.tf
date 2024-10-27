@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tmc-sample_deployment" {
-  bucket = "tmc-sample-deployment"
+  bucket = "tmc-service-deployment"
 }
 
 resource "aws_s3_bucket_accelerate_configuration" "tmc-sample_deploymentaccelerate_configuration" {
