@@ -179,6 +179,19 @@ projects:
       ]
       enabled: true
     apply_requirements: []
+    workflow: id
+
+  - name: s3/zerone-id
+    dir: terraform/s3/zerone-id
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "terraform.tfvars",
+      ]
+      enabled: true
+    apply_requirements: []
     workflow: id  
 ### github
   - name: github/springboot-sample
