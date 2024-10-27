@@ -8,7 +8,7 @@ resource "aws_iam_policy" "app_universal" {
         "Sid" : "AllowAnsibleArtifactAccess",
         "Action" : "s3:GetObject",
         "Resource" : [
-          "arn:aws:s3:::tmc-sample-deployment/demoapp/*"
+          "arn:aws:s3:::tmc-service-deployment/demoapp/*"
         ],
         "Effect" : "Allow"
       },
@@ -19,8 +19,8 @@ resource "aws_iam_policy" "app_universal" {
         ],
         "Effect" : "Allow",
         "Resource" : [
-          "arn:aws:s3:::tmc-sample-deployment",
-          "arn:aws:s3:::tmc-sample-deployment/*"
+          "arn:aws:s3:::tmc-service-deployment",
+          "arn:aws:s3:::tmc-service-deployment/*"
         ]
       },
       {

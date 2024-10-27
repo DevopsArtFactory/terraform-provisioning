@@ -9,7 +9,7 @@ module "demoapp" {
   service_port     = 8080
   healthcheck_port = 8080
   healthcheck_path = "/actuator/health"
-  
+
   # VPC Information via remote_state
   shard_id                 = data.terraform_remote_state.vpc.outputs.shard_id
   public_subnets           = data.terraform_remote_state.vpc.outputs.public_subnets
@@ -37,6 +37,6 @@ module "demoapp" {
   # CIDR for external LB
   # Control allowed IP for external LB 
   ext_lb_ingress_cidrs = [
-    "0.0.0.0/0"
+    "121.136.217.18/32"
   ]
 }

@@ -193,6 +193,19 @@ projects:
       enabled: true
     apply_requirements: []
     workflow: id  
+
+  - name: services/demoapp/tmcd_apnortheast2
+    dir: terraform/services/demoapp/tmcd_apnortheast2
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "terraform.tfvars",
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: id  
 ### github
   - name: github/springboot-sample
     dir: github/springboot-sample

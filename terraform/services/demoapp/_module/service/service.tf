@@ -14,16 +14,6 @@ resource "aws_security_group" "external_lb" {
     description = "External service https port"
   }
 
-
-  # Allow 80 port 
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = var.ext_lb_ingress_cidrs
-    description = "External service http port"
-  }
-
   egress {
     from_port   = 0
     to_port     = 0
