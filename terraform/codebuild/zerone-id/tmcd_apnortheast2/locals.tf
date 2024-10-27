@@ -31,5 +31,22 @@ locals {
       env_value = "admin"
     },
   ]
-  demo_envirement_variables = []
+  demo_envirement_variables = [
+    {
+      env_name  = "SERVICE_NAME",
+      env_value = "demoapp"
+    },
+    {
+      env_name  = "VPC_NAME",
+      env_value = "vpc-tmcd_apnortheast2"
+    },
+    {
+      env_name  = "TARGET_GROUP_NAME",
+      env_value = "demoapp-tmcdapne2-ext"
+    },
+    {
+      env_name  = "SECURITY_GROUP_NAME",
+      env_value = "demoapp-tmcd_apnortheast2"
+    },
+  ]
 }
