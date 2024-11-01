@@ -206,20 +206,6 @@ projects:
       enabled: true
     apply_requirements: []
     workflow: id  
-
-
-  - name: eks/tmcd_apnortheast2/tmcdapne2-nhwy
-    dir: terraform/eks/tmcd_apnortheast2/tmcdapne2-nhwy
-    workspace: default
-    terraform_version: 1.7.0
-    autoplan:
-      when_modified: [
-         "*.tf",
-         "terraform.tfvars",
-      ]
-      enabled: true
-    apply_requirements: []
-    workflow: id  
 ### github
   - name: github/springboot-sample
     dir: github/springboot-sample
