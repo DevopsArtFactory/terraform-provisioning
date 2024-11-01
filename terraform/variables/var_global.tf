@@ -93,5 +93,12 @@ variable "remote_state" {
         }
       }
     }
+    eks = {
+      tmcdapne2-nhwy = {
+        bucket = "zerone-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/eks/tmcd_apnortheast2/tmcdapne2-nhwy/terraform.tfstate"
+        region = "ap-northeast-2"
+      }
+    }
   }
 }
