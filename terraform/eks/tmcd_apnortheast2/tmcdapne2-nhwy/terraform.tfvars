@@ -1,3 +1,4 @@
+assume_role_arn = "arn:aws:iam::066346343248:role/assume-id-admin"
 # Basic Information
 account_alias = "id"
 product       = "tmc"
