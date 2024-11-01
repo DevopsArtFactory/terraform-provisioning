@@ -74,7 +74,7 @@ additional_security_group_ingress = [
 
 # Specified KMS ARNs accessed by ExternalSecrets
 external_secrets_access_kms_arns = [
-  "*"
+  "arn:aws:kms:ap-northeast-2:066346343248:key/79e6d15d-a3b1-431a-a6a2-ae9c63c25ddb"
 ]
 
 # Specified SSM ARNs accessed by ExternalSecrets

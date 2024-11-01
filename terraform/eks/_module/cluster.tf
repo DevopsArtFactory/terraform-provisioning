@@ -10,10 +10,10 @@ resource "aws_eks_cluster" "eks_cluster" {
     endpoint_public_access  = var.enable_public_access
     public_access_cidrs     = var.public_access_cidrs
   }
-access_config {
-  authentication_mode = var.authentication_mode
-  bootstrap_cluster_creator_admin_permissions = true
-}
+  access_config {
+    authentication_mode = var.authentication_mode
+    bootstrap_cluster_creator_admin_permissions = true
+  }
   kubernetes_network_config {
     service_ipv4_cidr = var.service_ipv4_cidr
   }
