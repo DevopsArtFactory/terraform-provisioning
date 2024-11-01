@@ -221,7 +221,7 @@ variable "external_secrets_access_secretsmanager_arns" {
   default     = ["*"]
 }
 variable "enabled_node_disk_gp3" {
-  type = bool
+  type    = bool
   default = true
 }
 variable "ebs_volume_type" {

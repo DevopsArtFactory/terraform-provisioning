@@ -10,10 +10,14 @@ resource "aws_eks_node_group" "eks_node_group" {
 
   ami_type        = each.value.ami_type
   capacity_type   = each.value.spot_enabled ? "SPOT" : "ON_DEMAND"
-  disk_size       = each.value.disk_size
+  # disk_size       = each.value.disk_size
   instance_types  = each.value.node_instance_types
   release_version = each.value.release_version != null ? each.value.release_version : var.release_version
 
+  launch_template {
+    id      = aws_launch_template.eks_node_group[0].id
+    version = aws_launch_template.eks_node_group[0].latest_version
+  }
   tags = merge(var.tags, tomap({
     "Name"                                      = "${var.cluster_name}-ng-${each.key}",
     "kubernetes.io/cluster/${var.cluster_name}" = "owned"
