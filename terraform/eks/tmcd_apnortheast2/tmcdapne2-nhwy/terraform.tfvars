@@ -1,3 +1,4 @@
+assume_role_arn = "arn:aws:iam::066346343248:role/assume-id-admin"
 # Basic Information
 account_alias = "id"
 product       = "tmc"
@@ -69,16 +70,6 @@ additional_security_group_ingress = [
     protocol    = "TCP"
     cidr_blocks = ["10.10.0.0/16"]
   }
-]
-
-# Cluster Access
-aws_auth_master_roles_arn = [
-  "arn:aws:iam::066346343248:role/atlantis-zerone-id-admin",
-  "arn:aws:iam::066346343248:role/assume-zerone-id-admin"
-]
-
-aws_auth_viewer_roles_arn = [
-
 ]
 
 # Specified KMS ARNs accessed by ExternalSecrets

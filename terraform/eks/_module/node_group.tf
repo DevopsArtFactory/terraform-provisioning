@@ -41,7 +41,8 @@ resource "aws_eks_node_group" "eks_node_group" {
     aws_iam_role_policy_attachment.eks_node_AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.eks_node_AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.eks_node_AmazonEC2ContainerRegistryReadOnly,
-    kubernetes_config_map.aws_auth,
+    aws_eks_access_entry.access_entry,
+    aws_eks_access_policy_association.access_policy_association
   ]
 }
 
