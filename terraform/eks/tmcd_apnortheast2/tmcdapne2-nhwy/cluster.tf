@@ -16,6 +16,7 @@ module "eks" {
   private_subnets                             = local.private_subnets
   target_vpc                                  = local.target_vpc
   assume_role_arn                             = local.assume_role_arn
+  access_entries                              = local.access_entries
   node_group_configurations                   = local.node_group_configurations
   tags                                        = local.tags
   enable_public_access                        = true

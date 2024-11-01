@@ -3,19 +3,19 @@ locals {
   account_id = var.account_id[var.account_alias]
 
   # Cluster Information
-  cluster_name           = data.terraform_remote_state.vpc.outputs.eks_cluster_name
-  cluster_version        = var.cluster_version
-  service_ipv4_cidr      = var.service_ipv4_cidr
-  release_version        = var.release_version
-  coredns_version        = var.coredns_version
-  kube_proxy_version     = var.kube_proxy_version
-  vpc_cni_version        = var.vpc_cni_version
-  ebs_csi_driver_version = var.ebs_csi_driver_version
+  cluster_name               = data.terraform_remote_state.vpc.outputs.eks_cluster_name
+  cluster_version            = var.cluster_version
+  service_ipv4_cidr          = var.service_ipv4_cidr
+  release_version            = var.release_version
+  coredns_version            = var.coredns_version
+  kube_proxy_version         = var.kube_proxy_version
+  vpc_cni_version            = var.vpc_cni_version
+  ebs_csi_driver_version     = var.ebs_csi_driver_version
   pod_identity_agent_version = var.pod_identity_agent_version
-  public_subnets         = data.terraform_remote_state.vpc.outputs.public_subnets
-  private_subnets        = data.terraform_remote_state.vpc.outputs.private_subnets
-  cluster_subnet_ids     = data.terraform_remote_state.vpc.outputs.private_subnets
-  target_vpc             = data.terraform_remote_state.vpc.outputs.vpc_id
+  public_subnets             = data.terraform_remote_state.vpc.outputs.public_subnets
+  private_subnets            = data.terraform_remote_state.vpc.outputs.private_subnets
+  cluster_subnet_ids         = data.terraform_remote_state.vpc.outputs.private_subnets
+  target_vpc                 = data.terraform_remote_state.vpc.outputs.vpc_id
 
   # additional security group
   additional_security_group_ingress = var.additional_security_group_ingress
@@ -49,7 +49,7 @@ locals {
     }
   }
 
-  role_args = length(var.assume_role_arn) > 0 ? ["--role-arn", var.assume_role_arn] : []
+  role_args                 = length(var.assume_role_arn) > 0 ? ["--role-arn", var.assume_role_arn] : []
   assume_role_arn           = length(var.assume_role_arn) > 0 ? var.assume_role_arn : ""
   node_group_configurations = var.node_group_configurations != null && length(var.node_group_configurations) > 0 ? var.node_group_configurations : []
 

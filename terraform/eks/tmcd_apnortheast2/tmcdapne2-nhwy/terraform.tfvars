@@ -74,12 +74,12 @@ additional_security_group_ingress = [
 
 # Specified KMS ARNs accessed by ExternalSecrets
 external_secrets_access_kms_arns = [
-"*"
+  "*"
 ]
 
 # Specified SSM ARNs accessed by ExternalSecrets
 external_secrets_access_ssm_arns = [
-"*"
+  "*"
 ]
 
 # Specified SecretsManager ARNs accessed by ExternalSecrets

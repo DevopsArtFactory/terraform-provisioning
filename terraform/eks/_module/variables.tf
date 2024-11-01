@@ -258,3 +258,7 @@ variable "access_entries" {
   type = any
   default = {}
 }
+variable "authentication_mode" {
+  description = ""
+  default = "API_AND_CONFIG_MAP"
+}
