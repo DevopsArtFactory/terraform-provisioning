@@ -41,13 +41,6 @@ resource "aws_security_group" "eks_cluster" {
     description = ""
   }
 
-  ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "TCP"
-    cidr_blocks = ["10.112.0.0/16"]
-  }
-
   dynamic "ingress" {
     for_each = var.additional_security_group_ingress
     content {
