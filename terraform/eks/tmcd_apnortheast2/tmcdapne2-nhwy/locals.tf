@@ -32,12 +32,22 @@ locals {
   # Cluster service role
   cluster_policy_list = var.cluster_policy_list
 
-  # Cluster Access Roles
-  # Please do not add the default roles or users here.
-  aws_auth_master_users_arn = length(var.aws_auth_master_users_arn) > 0 ? var.aws_auth_master_users_arn : []
-  aws_auth_master_roles_arn = length(var.aws_auth_master_roles_arn) > 0 ? var.aws_auth_master_roles_arn : []
-  aws_auth_viewer_users_arn = length(var.aws_auth_viewer_users_arn) > 0 ? var.aws_auth_viewer_users_arn : []
-  aws_auth_viewer_roles_arn = length(var.aws_auth_viewer_roles_arn) > 0 ? var.aws_auth_viewer_roles_arn : []
+  # Access Entry
+  access_entries = {
+    accountadmin = {
+      kubernetes_groups = []
+      principal_arn     = "arn:aws:iam::${var.account_id.id}:user/zerone"
+      policy_associations = {
+        kubeadmin = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          access_scope = {
+            namespaces = []
+            type       = "cluster"
+          }
+        }
+      }
+    }
+  }
 
   role_args = length(var.assume_role_arn) > 0 ? ["--role-arn", var.assume_role_arn] : []
   assume_role_arn           = length(var.assume_role_arn) > 0 ? var.assume_role_arn : ""

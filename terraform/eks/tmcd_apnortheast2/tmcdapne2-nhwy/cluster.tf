@@ -15,10 +15,6 @@ module "eks" {
   public_subnets                              = local.public_subnets
   private_subnets                             = local.private_subnets
   target_vpc                                  = local.target_vpc
-  aws_auth_master_users_arn                   = local.aws_auth_master_users_arn
-  aws_auth_master_roles_arn                   = local.aws_auth_master_roles_arn
-  aws_auth_viewer_users_arn                   = local.aws_auth_viewer_users_arn
-  aws_auth_viewer_roles_arn                   = local.aws_auth_viewer_roles_arn
   assume_role_arn                             = local.assume_role_arn
   node_group_configurations                   = local.node_group_configurations
   tags                                        = local.tags

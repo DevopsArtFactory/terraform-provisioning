@@ -253,3 +253,8 @@ variable "node_device_name" {
   type    = string
   default = "/dev/xvda"
 }
+variable "access_entries" {
+  description = "Map of access entires for EKS Cluster"
+  type = any
+  default = {}
+}
