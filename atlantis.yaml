@@ -246,6 +246,19 @@ projects:
     apply_requirements: []
     workflow: github  
 
+### datadog
+  - name: datadog/integration
+    dir: datadog/integration
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "*.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: datadog  
 
 #### Workflows #####
 workflows:
@@ -268,6 +281,22 @@ workflows:
 
   # github
   github:
+    plan:
+      steps:
+        - init:
+            extra_args: [
+              '-backend-config="role_arn=arn:aws:iam::066346343248:role/atlantis-zerone-id-admin"',
+              '-upgrade=false'
+            ]
+        - plan:
+            extra_args: [
+              "-var 'assume_role_arn=arn:aws:iam::066346343248:role/atlantis-zerone-id-admin'"
+            ]
+    apply:
+      steps:
+        - apply
+  # datadog
+  datadog:
     plan:
       steps:
         - init:
