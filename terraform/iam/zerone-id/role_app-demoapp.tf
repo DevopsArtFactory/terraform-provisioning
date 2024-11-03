@@ -5,12 +5,16 @@ resource "aws_iam_role" "app_demoapp" {
     "Version" : "2012-10-17",
     "Statement" : [
       {
-        "Sid" : "",
         "Effect" : "Allow",
         "Principal" : {
-          "Service" : "ec2.amazonaws.com"
+          "Federated" : "${data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_arn}"
         },
-        "Action" : "sts:AssumeRole"
+        "Action" : "sts:AssumeRoleWithWebIdentity",
+        "Condition" : {
+          "StringEquals" : {
+            "${data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_url}:aud" : "sts.amazonaws.com"
+          }
+        }
       }
     ]
   })
