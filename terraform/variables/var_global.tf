@@ -93,6 +93,7 @@ variable "remote_state" {
         }
       }
     }
+
     eks = {
       tmcdapne2-nhwy = {
         bucket = "zerone-id-apnortheast2-tfstate"
