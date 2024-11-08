@@ -27,7 +27,7 @@ resource "aws_internet_gateway" "default" {
 }
 
 resource "aws_eip" "nat" {
-  count  = length(var.availability_zones)
+  count = length(var.availability_zones)
   # domain = "vpc"
 
   lifecycle {

@@ -16,7 +16,7 @@ projects:
   - name: vpc/tmcd_apnortheast2
     dir: terraform/vpc/tmcd_apnortheast2
     workspace: default
-    terraform_version: 1.5.7
+    terraform_version: 1.7.0
     autoplan:
       when_modified: [
          "*.tf",
