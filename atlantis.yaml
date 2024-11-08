@@ -260,6 +260,32 @@ projects:
     apply_requirements: []
     workflow: datadog  
 
+### sumologic
+  - name: sumologic/collector
+    dir: sumologic/collector
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "*.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: sumologic  
+
+  - name: sumologic/partition
+    dir: sumologic/partition
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+         "*.yaml"
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: sumologic
 #### Workflows #####
 workflows:
   # id
@@ -297,6 +323,22 @@ workflows:
         - apply
   # datadog
   datadog:
+    plan:
+      steps:
+        - init:
+            extra_args: [
+              '-backend-config="role_arn=arn:aws:iam::066346343248:role/atlantis-zerone-id-admin"',
+              '-upgrade=false'
+            ]
+        - plan:
+            extra_args: [
+              "-var 'assume_role_arn=arn:aws:iam::066346343248:role/atlantis-zerone-id-admin'"
+            ]
+    apply:
+      steps:
+        - apply
+
+  sumologic:
     plan:
       steps:
         - init:
