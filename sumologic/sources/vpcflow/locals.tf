@@ -1,12 +1,7 @@
 locals {
   collect_role_arn = "arn:aws:iam::066346343248:role/sumologic-role"
-  bucket_name      = "tmcdapne2-vpcflow-log"
+  bucket_name      = ""
   sources_data = [
-    {
-      target_regions = ["ap-northeast-2"]
-      account_alias = "zerone-id"
-      account_id = "066346343248"
-    }
   ]
 
   sources_data_flattened = flatten([
