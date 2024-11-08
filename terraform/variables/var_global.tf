@@ -102,5 +102,13 @@ variable "remote_state" {
         region = "ap-northeast-2"
       }
     }
+
+    s3 = {
+      zerone-id = {
+        bucket = "zerone-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/s3/zerone-id/terraform.tfstate"
+        region = "ap-northeast-2"
+      }
+    }
   }
 }
