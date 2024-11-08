@@ -8,4 +8,6 @@ terraform {
   required_version = ">= 0.13"
 }
 
-provider "sumologic" {}
+provider "sumologic" {
+  environment = "kr"
+}
