@@ -16,6 +16,7 @@ variable "account_id" {
     id      = "066346343248"
     art-id  = "816736805842"
     datadog = "464622532012"
+    sumologic = "926226587429"
   }
 }
 
