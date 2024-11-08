@@ -267,8 +267,7 @@ projects:
     terraform_version: 1.7.0
     autoplan:
       when_modified: [
-         "*.tf",
-         "*.yaml"
+         "*.tf"
       ]
       enabled: true
     apply_requirements: []
@@ -280,12 +279,24 @@ projects:
     terraform_version: 1.7.0
     autoplan:
       when_modified: [
-         "*.tf",
-         "*.yaml"
+         "*.tf"
       ]
       enabled: true
     apply_requirements: []
     workflow: sumologic
+
+  - name: sumologic/sources/vpcflow
+    dir: sumologic/sources/vpcflow
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: sumologic
+
 #### Workflows #####
 workflows:
   # id
