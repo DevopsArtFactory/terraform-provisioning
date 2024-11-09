@@ -254,7 +254,6 @@ projects:
     autoplan:
       when_modified: [
          "*.tf",
-         "*.yaml"
       ]
       enabled: true
     apply_requirements: []
