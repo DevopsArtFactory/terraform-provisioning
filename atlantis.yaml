@@ -269,7 +269,19 @@ projects:
       ]
       enabled: true
     apply_requirements: []
-    workflow: datadog  
+    workflow: datadog
+
+  - name: datadog/dashboard
+    dir: datadog/dashboard
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf",
+      ]
+      enabled: true
+    apply_requirements: []
+    workflow: datadog   
 ### sumologic
   - name: sumologic/collector
     dir: sumologic/collector
