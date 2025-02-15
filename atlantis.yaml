@@ -319,6 +319,20 @@ projects:
     apply_requirements: []
     workflow: sumologic
 
+
+  - name: kms/devart-id/ap-northeast-2
+    dir: terraform/kms/devart-id/ap-northeast-2
+    workspace: default
+    terraform_version: 1.7.0
+    autoplan:
+      when_modified: [
+         "*.tf"
+      ]
+      enabled: true
+    apply_requirements: [
+    ]
+    workflow: devart-id  
+    
 #### Workflows #####
 workflows:
   # id
@@ -382,6 +396,23 @@ workflows:
         - plan:
             extra_args: [
               "-var 'assume_role_arn=arn:aws:iam::066346343248:role/atlantis-zerone-id-admin'"
+            ]
+    apply:
+      steps:
+        - apply
+
+# devart-id
+  devart-id:
+    plan:
+      steps:
+        - init:
+            extra_args: [
+              '-backend-config="role_arn=arn:aws:iam::816736805842:role/atlantis-devart-id-admin"',
+              '-upgrade=false'
+            ]
+        - plan:
+            extra_args: [
+              "-var 'assume_role_arn=arn:aws:iam::816736805842:role/atlantis-devart-id-admin'"
             ]
     apply:
       steps:
