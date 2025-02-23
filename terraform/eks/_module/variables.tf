@@ -149,6 +149,11 @@ variable "deploy_pod_identity_agent" {
 variable "coredns_version" {
   default = ""
 }
+variable "deploy_ebs_csi_driver" {
+  description = "Set to true if you want to deploy the ebs csi driver addon"
+  type        = bool
+  default     = false
+}
 
 variable "ebs_csi_driver_version" {
   default = ""

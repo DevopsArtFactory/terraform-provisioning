@@ -51,6 +51,7 @@ resource "aws_eks_addon" "vpc_cni" {
 }
 
 resource "aws_eks_addon" "ebs_csi" {
+  count        = var.deploy_ebs_csi_driver ? 1 : 0
   cluster_name = aws_eks_cluster.eks_cluster.name
 
   addon_name    = "aws-ebs-csi-driver"
